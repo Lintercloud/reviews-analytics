@@ -14,5 +14,17 @@ with open  ("reviews.txt", "r") as f:
     
 for d in data:
     sum_line += len(d)
-    
-print("平均留言長度為", int(sum_line / (len(data))),"個字")
+      
+print("平均留言長度為", int(sum_line / (len(data))), "個字")
+
+new = []
+for d in data:
+    if len(d) < 100:
+        new.append(d)
+print("留言小於一百個字有", len(new), "筆")
+
+good = []
+for d in data:
+    if "good" in d:
+        good.append(d)
+print("Good的留言有", len(good), "筆")
